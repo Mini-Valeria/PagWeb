@@ -2,23 +2,19 @@
 
 
 :root {
-	--primary-color: #00bcbf;
-	--background-color: #006566;;
-	--dark-color: hsl(0, 0%, 100%);
-	background-image: url('IMAGENES/gotas de fondo.jpeg');
+	--primary-color: #8695e7;
+	--background-color: #6a90b4;
+	--dark-color: #ffffff;
+	background-color: #bee0fb;
 	background-size: cover;
-	background-position: center;
 }
 
 html {
 	font-size: 62.5%;
-	font-family: 'Poppins', sans-serif;
+	font-family: cursive;
 	p {
-		margin-bottom: 50px; /* Margen inferiorpara todos los párrafos */
+		margin-bottom: 50px; /*Margen inferior para todos los párrafos */
 		font-size: 2.5rem;
-		
-		
-
 	}
 	
 }
@@ -40,9 +36,17 @@ html {
 }
 
 .heading-1 {
+	margin-top: 50px;
 	text-align: center;
 	font-weight: 500;
+	font-family: cursive;
 	font-size: 3rem;
+	color: #3e4569;
+}
+
+.text {
+	font-family: cursive;
+	color: #c9cff1;
 }
 
 /* ********************************** */
@@ -52,14 +56,13 @@ html {
 	background-color: var(--background-color);
 }
 
+
 .hero {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2rem 0;
 }
-
-
 
 .container-logo {
 	display: flex;
@@ -74,35 +77,29 @@ html {
 .container-logo h1 a {
 	text-decoration: none;
 	color: #ffffff;
-	font-size: 3rem;
+	font-size: 1rem;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 }
 
-
-
-
-
-
 /* ************* NAVBAR ************* */
 .container-navbar {
 	background-color: var(--primary-color);
+	display: flex;
 }
 
 .navbar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	padding: 1rem 0;
 }
 
 .navbar .fa-bars {
 	display: none;
-}
-
-.menu {
-	display: flex;
-	gap: 2rem;
+	justify-content: center;
+	text-align: right;
+	display: inline;
 }
 
 .menu li {
@@ -112,6 +109,7 @@ html {
 .menu a {
 	text-decoration: none;
 	font-size: 1.3rem;
+	font-family: cursive;
 	color: var(--dark-color);
 	font-weight: 600;
 	text-transform: uppercase;
@@ -185,14 +183,12 @@ html {
 /* ********************************** */
 /* Imagen del banner*/
 .banner {
-	background-image: linear-gradient(100deg, #000000, #00000020),
-		url('IMAGENES/gota de corazon para banner.jpeg');
+	background-image: linear-gradient(100deg, #303c54, #a3a2fd28), url('./assets/Images/wallpaper.jpg');
 	height: 60rem;
-	background-size: cover;
-	background-position: center;
-	border: 6px solid #ffffff;
-
+	background-size: auto;
+	border: 6px solid #bee0fb;
 }
+
 /* Espacio del banner*/
 .content-banner {
 	max-width: 90rem;
@@ -202,44 +198,42 @@ html {
 /* Texto del banner chico*/
 .content-banner p {
 	color: var(--primary-color);
-	font-size: 1.2rem;
+	margin-top: -25px;
+	font-family: cursive;
+	font-size: 2.5rem;
 	margin-bottom: 1rem;
 	font-weight: 500;
 }
-/* Texto del baner grande*/
+/* Texto del banner grande*/
 .content-banner h2 {
-	color: #fff;
-	font-size: 3.5rem;
+	color: #e2fbfb;
+	font-size: 4rem;
+	font-family: cursive;
 	font-weight: 500;
 	line-height: 1.2;
 }
 /* Boton conocer mas*/
 .content-banner a {
-	margin-top: 2rem;
+	margin-top: 10px;
 	text-decoration: none;
+	font-family: cursive;
 	color: #fff;
+	font-size: 1.5rem;
 	background-color: var(--primary-color);
 	display: inline-block;
-	padding: 1rem 3rem;
+	padding: 30px;
 	text-transform: uppercase;
-	border-radius: 3rem;
+	border-radius: 6rem;
 }
 
 .container-fibra {
 	padding: 15px;
-	
 	border: 1px solid #007691;
 	margin-bottom: 20px;
 }
 
-
-
-
-
-
-
 /* ********************************** */
-/*             Especificaciones de las cartas           */
+/*   Especificaciones de las cartas   */
 /* ********************************** */
 
 .top-categories {
@@ -248,8 +242,6 @@ html {
 	gap: 2rem;
 	margin-bottom: 3rem;
 }
-
-
 
 .container-categories {
 	display: grid;
@@ -454,7 +446,6 @@ flex: 1;
 	
 }
 
-
 .container-img {
 	position: relative;
 }
@@ -466,11 +457,9 @@ flex: 1;
 }
 
 .principal{
-
 	display: flex;
 	align-items: center;
 	justify-content: end;
-	
 }
 .p1{
 	margin-right: 50px;
@@ -487,17 +476,16 @@ height: 220px;
 	display:flex;
 	justify-content: center;
 	padding: auto;
-
 }
 
 .p2{
 	margin-right: 50px;
 	color: #ffffff;
 }
+
 .i2{
 	width: 250px;
 	height: 220px;
-	
 }
 
 .principal3{
@@ -508,10 +496,12 @@ height: 220px;
 	color: #fff;
 
 }
+
 .i3{
 	width: 250px;
 	height: 220px;
 }
+
 .pc1{
 	color: #fff;
 }
@@ -526,3 +516,77 @@ height: 220px;
 	margin-bottom: 3rem;
 }
 
+/*BUTTON BAR EFFECTS*/
+.menu {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 11px;
+	padding: 0;
+  }
+  
+  body {
+	font-family: cursive;
+  }
+  
+  ul {
+	position: absolute;
+	top: 45px;
+	left: 60px;
+	transform: translate(-40px, -50px);
+	display: flex;
+	li {
+	  list-style: none;
+	  a {
+		position: relative;
+		display: block;
+		text-transform: uppercase;
+		margin: 20px 0;
+		padding: 10px 20px;
+		text-decoration: none;
+		color: #cad1f3;
+		font-family: sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		transition: .5s;
+		z-index: 1;
+		&:before {
+		  content: '';
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  border-top: 2px solid #cad1f3;
+		  border-bottom: 2px solid #cad1f3;
+		  transform: scaleY(2);
+		  opacity: 0;
+		  transition: .3s;
+		}
+		&:after {
+		  content: '';
+		  position: absolute;
+		  top: 2px;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-color: #cad1f3;
+		  transform: scale(0);
+		  opacity: 0;
+		  transition: .3s;
+		  z-index: -1;
+		}
+		&:hover {
+		  color: #fff;
+		  &:before {
+			transform: scaleY(1);
+			opacity: 1;
+		  }
+		  &:after {
+			transform: scaleY(1);
+			opacity: 1;
+		  }
+		}
+	  }
+	}
+  }

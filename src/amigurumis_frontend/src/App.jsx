@@ -1,9 +1,6 @@
 import { Client, InternetIdentity } from '@bundly/ic-core-js';
 import { IcpConnectContextProvider } from '@bundly/ic-react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from './Home';
 
 export default function App() {
@@ -11,7 +8,7 @@ export default function App() {
     {
       path: "/",
       element: <Home/>,
-    },
+    }
   ]);
 
   const client = Client.create({

@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+	--primary-color: #8695e7;
+	--background-color: #6a90b4;
+	--dark-color: #ffffff;
+	background-color: #bee0fb;
+	background-size: cover;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: cursive;
+	p {
+		margin-bottom: 50px; /*Margen inferior para todos los párrafos */
+		font-size: 2.5rem;
+	}
+	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center;
+}
+
+/* ********************************** */
+/*             UTILIDADES             */
+/* ********************************** */
+.container {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.heading-1 {
+	margin-top: 50px;
+	text-align: center;
+	font-weight: 500;
+	font-family: cursive;
+	font-size: 3rem;
+	color: #3e4569;
+}
+
+.text {
+	font-family: cursive;
+	color: #c9cff1;
+}
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+.container-hero {
+	background-color: var(--background-color);
+}
+
+
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.container-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.container-logo i {
+	font-size: 3rem;
+}
+/* Color del logo*/
+.container-logo h1 a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+/* ************* NAVBAR ************* */
+.container-navbar {
+	background-color: var(--primary-color);
+	display: flex;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+	display: none;
+	justify-content: center;
+	text-align: right;
+	display: inline;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu a {
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-family: cursive;
+	color: var(--dark-color);
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.menu a::after {
+	content: '';
+	width: 1.5rem;
+	height: 1px;
+	background-color: #ffffff;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+.menu a:hover {
+	color: #06586b;
+}
+/* Diceno del buscar*/
+.search-form {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border: 2px solid #fff;
+	border-radius: 2rem;
+	background-color: #fff;
+	height: 4.4rem;
+	overflow: hidden;
+}
+/* Especificaciones del buscar*/
+.search-form input {
+	outline: none;
+	font-family: inherit;
+	border: none;
+	width: 25rem;
+	font-size: 1.4rem;
+	padding: 0 2rem;
+	background-image:"IMAGENES/GOTA DE AGUA PARA BANNER.jpeg"
+
+}
+
+.search-form input::-webkit-search-cancel-button {
+	appearance: none;
+}
+
+.search-form .btn-search {
+	border: none;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 1rem;
+}
+
+.btn-search i {
+	font-size: 2rem;
+	color: #fff;
+}
+
+/* ********************************** */
+/*               BANNER               */
+/* ********************************** */
+/* Imagen del banner*/
+.banner {
+	background-image: linear-gradient(100deg, #303c54, #a3a2fd28), url('./assets/Images/wallpaper.jpg');
+	height: 60rem;
+	background-size: auto;
+	border: 6px solid #bee0fb;
+}
+
+/* Espacio del banner*/
+.content-banner {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 25rem 0;
+}
+/* Texto del banner chico*/
+.content-banner p {
+	color: var(--primary-color);
+	margin-top: -25px;
+	font-family: cursive;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+/* Texto del banner grande*/
+.content-banner h2 {
+	color: #e2fbfb;
+	font-size: 4rem;
+	font-family: cursive;
+	font-weight: 500;
+	line-height: 1.2;
+}
+/* Boton conocer mas*/
+.content-banner a {
+	margin-top: 10px;
+	text-decoration: none;
+	font-family: cursive;
+	color: #fff;
+	font-size: 1.5rem;
+	background-color: var(--primary-color);
+	display: inline-block;
+	padding: 30px;
+	text-transform: uppercase;
+	border-radius: 6rem;
+}
+
+.container-fibra {
+	padding: 15px;
+	border: 1px solid #007691;
+	margin-bottom: 20px;
+}
+
+/* ********************************** */
+/*   Especificaciones de las cartas   */
+/* ********************************** */
+
+.top-categories {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.container-categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+}
+
+.card-category {
+	height: 20rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2rem;
+	gap: 2rem;
+}
+
+/* Cartas con imagenes*/
+.category-irish {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('IMAGENES/carbon activado.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	justify-content: center;
+}
+
+.category-capuchino {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('IMAGENES/trenza de cabello.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.category-expreso {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('IMAGENES/arcilla.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* fibra capilar*/
+/* en proceso*/
+.category-fibra {
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/Fibra1.avif');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+top: 80%;
+left: 39%;
+width: 317%; 
+}
+
+.category-fibra2 {
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/fibra2.jpg');
+	background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+top: 80%;
+left: 39%;
+width: 317%; 
+}
+
+.category-fibra3 {
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/fibra3.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	top: 80%;
+	left: 39%;
+	width: 317%; 
+}
+/*  Inicio de contaminantes pagina*/
+
+.p1{
+	text-align: right;
+}
+.category-contaminantes {
+	text-align: right;
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/contaminantes3.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 350px; 
+	height: 250px;
+}
+
+.category-contaminantes2 {
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/contaminantes2.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 350px;
+	height: 250px; 
+
+}
+
+
+.category-contaminantes3 {
+	background-image: linear-gradient(#ffffff43, #00000080),
+	url('IMAGENES/contaminantes3.jpeg');
+	background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+top: 10%;
+left: 0%;
+width: 100%; 
+transform: translateX(110); 
+flex: 1;
+}
+
+.container-parrafo1{
+	color: #ffffff;
+	align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; 
+	padding: 200px;
+}
+
+.container-parrafo2{
+	color: #ffffff;
+	align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; 
+
+
+}
+
+.container-parrafo3{
+	color: #ffffff;
+	align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; 
+
+
+}
+
+/* Color de la letra*/
+.card-category p {
+	font-size: 2.5rem;
+	color: #ffffff;
+	text-transform: capitalize;
+	position: relative;
+}
+/* Color de la raya*/
+.card-category p::after {
+	content: '';
+	width: 2.5rem;
+	height: 2px;
+	background-color: #00fbff;
+	position: absolute;
+	bottom: -1rem;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+/* Color del boton ver mas*/
+.card-category span {
+	font-size: 1.6rem;
+	color: #00fbff;
+	cursor: pointer;
+}
+
+.card-category span:hover {
+	color: var(--primary-color);
+}
+
+
+
+/* Especiales*/
+.container-products {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3rem;
+}
+
+.card-product {
+	background-color: #007691;
+	padding: 2rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+	border: 2px solid #ffffff;
+}
+
+.card-product-fibra {
+	background-color: #007691;
+	padding: 2rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+	border: 5px solid #000000;
+}
+
+.card-product-contaminantes {
+	background-color: #007691;
+	padding: 2rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+	border: 150px solid #00ffd900;
+	
+}
+
+.container-img {
+	position: relative;
+}
+
+.container-img img {
+	width: 100%;
+	
+
+}
+
+.principal{
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+.p1{
+	margin-right: 50px;
+	color: #fff;
+}
+
+.i1{
+width: 250px;
+height: 220px;
+
+}
+
+.principal2{
+	display:flex;
+	justify-content: center;
+	padding: auto;
+}
+
+.p2{
+	margin-right: 50px;
+	color: #ffffff;
+}
+
+.i2{
+	width: 250px;
+	height: 220px;
+}
+
+.principal3{
+	display: flex;
+}
+
+.p3{
+	color: #fff;
+
+}
+
+.i3{
+	width: 250px;
+	height: 220px;
+}
+
+.pc1{
+	color: #fff;
+}
+
+/* ********************************** */
+/*              SPECIALS              */
+/* ********************************** */
+.specials {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+/*BUTTON BAR EFFECTS*/
+.menu {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 11px;
+	padding: 0;
+  }
+  
+  body {
+	font-family: cursive;
+  }
+  
+  ul {
+	position: absolute;
+	top: 45px;
+	left: 60px;
+	transform: translate(-40px, -50px);
+	display: flex;
+	li {
+	  list-style: none;
+	  a {
+		position: relative;
+		display: block;
+		text-transform: uppercase;
+		margin: 20px 0;
+		padding: 10px 20px;
+		text-decoration: none;
+		color: #cad1f3;
+		font-family: sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		transition: .5s;
+		z-index: 1;
+		&:before {
+		  content: '';
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  border-top: 2px solid #cad1f3;
+		  border-bottom: 2px solid #cad1f3;
+		  transform: scaleY(2);
+		  opacity: 0;
+		  transition: .3s;
+		}
+		&:after {
+		  content: '';
+		  position: absolute;
+		  top: 2px;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-color: #cad1f3;
+		  transform: scale(0);
+		  opacity: 0;
+		  transition: .3s;
+		  z-index: -1;
+		}
+		&:hover {
+		  color: #fff;
+		  &:before {
+			transform: scaleY(1);
+			opacity: 1;
+		  }
+		  &:after {
+			transform: scaleY(1);
+			opacity: 1;
+		  }
+		}
+	  }
+	}
+  }
