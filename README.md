@@ -19,7 +19,7 @@ To learn more before you start working with `NODAGUA`, see the following documen
 If you want to start working on your project right away, you might want to try the following commands:
 
 ```bash
-cd amigurumis/
+cd PagWeb/
 dfx help
 dfx canister --help
 ```
