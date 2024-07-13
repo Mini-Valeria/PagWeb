@@ -1,0 +1,116 @@
+import numpy as np
+import skfuzzy as fuzz
+from skfuzzy import control as ctrl
+import matplotlib.pyplot as plt
+
+# Definición de las variables difusas
+ph = ctrl.Antecedent(np.arange(0, 14, 0.1), 'ph')
+turbidez = ctrl.Antecedent(np.arange(0, 101, 1), 'turbidez')
+claridad = ctrl.Antecedent(np.arange(0, 101, 1), 'claridad')
+presion = ctrl.Antecedent(np.arange(0, 101, 1), 'presion')
+calidad = ctrl.Consequent(np.arange(0, 101, 1), 'calidad')
+
+# Definir los conjuntos difusos para cada variable
+ph['acido'] = fuzz.trapmf(ph.universe, [0, 0, 4, 6])
+ph['neutral'] = fuzz.trimf(ph.universe, [4, 7, 10])
+ph['basico'] = fuzz.trapmf(ph.universe, [8, 10, 14, 14])
+
+turbidez['baja'] = fuzz.trapmf(turbidez.universe, [0, 0, 20, 40])
+turbidez['media'] = fuzz.trimf(turbidez.universe, [30, 50, 70])
+turbidez['alta'] = fuzz.trapmf(turbidez.universe, [60, 80, 100, 100])
+
+claridad['baja'] = fuzz.trapmf(claridad.universe, [0, 0, 20, 40])
+claridad['media'] = fuzz.trimf(claridad.universe, [30, 50, 70])
+claridad['alta'] = fuzz.trapmf(claridad.universe, [60, 80, 100, 100])
+
+presion['baja'] = fuzz.trapmf(presion.universe, [0, 0, 20, 40])
+presion['media'] = fuzz.trimf(presion.universe, [30, 50, 70])
+presion['alta'] = fuzz.trapmf(presion.universe, [60, 80, 100, 100])
+
+calidad['mala'] = fuzz.trapmf(calidad.universe, [0, 0, 25, 50])
+calidad['regular'] = fuzz.trimf(calidad.universe, [40, 50, 60])
+calidad['buena'] = fuzz.trapmf(calidad.universe, [50, 75, 100, 100])
+
+# Definir las reglas difusas
+reglas = [
+    ctrl.Rule(ph['acido'] & turbidez['alta'] & claridad['baja'] & presion['baja'], calidad['mala']),
+    ctrl.Rule(ph['acido'] & turbidez['alta'] & claridad['baja'] & presion['media'], calidad['mala']),
+    ctrl.Rule(ph['acido'] & turbidez['alta'] & claridad['baja'] & presion['alta'], calidad['mala']),
+    ctrl.Rule(ph['neutral'] & turbidez['media'] & claridad['media'] & presion['media'], calidad['regular']),
+    ctrl.Rule(ph['neutral'] & turbidez['baja'] & claridad['alta'] & presion['alta'], calidad['buena']),
+    ctrl.Rule(ph['basico'] & turbidez['baja'] & claridad['alta'] & presion['alta'], calidad['buena']),
+    ctrl.Rule(ph['basico'] & turbidez['media'] & claridad['media'] & presion['media'], calidad['regular']),
+    ctrl.Rule(ph['acido'] & turbidez['baja'] & claridad['media'] & presion['baja'], calidad['regular']),
+    ctrl.Rule(ph['neutral'] & turbidez['media'] & claridad['alta'] & presion['media'], calidad['buena']),
+    ctrl.Rule(ph['basico'] & turbidez['alta'] & claridad['baja'] & presion['baja'], calidad['mala']),
+    ctrl.Rule(ph['basico'] & turbidez['alta'] & claridad['media'] & presion['media'], calidad['regular']),
+    ctrl.Rule(ph['neutral'] & turbidez['alta'] & claridad['alta'] & presion['media'], calidad['buena']),
+    ctrl.Rule(ph['acido'] & turbidez['baja'] & claridad['alta'] & presion['alta'], calidad['buena']),
+    ctrl.Rule(ph['basico'] & turbidez['media'] & claridad['alta'] & presion['alta'], calidad['buena']),
+    ctrl.Rule(ph['neutral'] & turbidez['baja'] & claridad['media'] & presion['media'], calidad['buena']),
+    ctrl.Rule(ph['neutral'] & turbidez['media'] & claridad['baja'] & presion['media'], calidad['regular']),
+    ctrl.Rule(ph['acido'] & turbidez['media'] & claridad['media'] & presion['media'], calidad['regular']),
+    ctrl.Rule(ph['basico'] & turbidez['baja'] & claridad['baja'] & presion['alta'], calidad['mala']),
+]
+
+# Crear el sistema de control difuso
+sistema_control = ctrl.ControlSystem(reglas)
+evaluacion_calidad = ctrl.ControlSystemSimulation(sistema_control)
+
+# Función para evaluar las condiciones y generar mensajes adicionales
+def generar_mensaje_adicional(turbidez_value, presion_value, claridad_value):
+    mensajes = []
+
+    if turbidez_value > 80:
+        mensajes.append("Se detecta alta turbidez. Se recomienda mejorar el filtro y proceso de purificación.")
+    
+    if presion_value < 20:
+        mensajes.append("Se detecta baja presión. Puede haber una fuga en el sistema.")
+    
+    if claridad_value < 20:
+        mensajes.append("Se detecta baja claridad. El agua puede estar siendo contaminada.")
+
+    return mensajes
+
+# Función para evaluar la calidad del agua
+def evaluar_calidad_agua(ph_value, turbidez_value, claridad_value, presion_value):
+    evaluacion_calidad.input['ph'] = ph_value
+    evaluacion_calidad.input['turbidez'] = turbidez_value
+    evaluacion_calidad.input['claridad'] = claridad_value
+    evaluacion_calidad.input['presion'] = presion_value
+
+    evaluacion_calidad.compute()
+
+    calidad = evaluacion_calidad.output['calidad']
+    mensajes = generar_mensaje_adicional(turbidez_value, presion_value, claridad_value)
+
+    return calidad, mensajes
+
+# Ejemplo de uso
+ph_value = 7.0
+turbidez_value = 20
+claridad_value = 60
+presion_value = 40
+
+calidad_agua, mensajes_adicionales = evaluar_calidad_agua(ph_value, turbidez_value, claridad_value, presion_value)
+
+print(f'La calidad del agua es: {calidad_agua:.2f}')
+
+# Imprimir mensajes adicionales según las condiciones
+if ph_value >= 8.0:
+    print("Se detecta alto ph. se recomienda proceso de purificación.")
+    
+if turbidez_value >= 50:
+    print("Se detecta alta turbidez. Se recomienda mejorar el filtro y proceso de purificación.")
+
+if claridad_value <= 50:
+    print("Se detecta baja claridad. El agua puede estar siendo contaminada.")
+
+if presion_value <= 40:
+    print("Se detecta baja presión. Puede haber una fuga en el sistema.")
+
+# Graficar la salida del sistema de control difuso
+calidad.view(sim=evaluacion_calidad)
+
+# Mostrar la gráfica
+plt.show()
