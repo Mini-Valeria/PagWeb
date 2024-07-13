@@ -1,8 +1,15 @@
-# `amigurumis`
+# `SHILERCLIK - NODAGUA`
 
-Welcome to your new `amigurumis` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Bienvenido a nuestro proyecto `NODAGUA`. A continuación la daremos una descripción sobre lo que trata el proyecto:
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+Ofrecemos un sistema de sensores inteligentes que nos ayuda a medir la calidad del agua (pH, turbidez, temperatura y claridad) con el objetivo de prevenir fugas, contaminación del agua y lo más importante la pérdida vital del líquido.
+
+La problemática que observamos fue que en el estado de Aguascalientes, la población ha incrementado en los últimos años, esto causa que se necesite abastecer a todas las personas con este elemento básico como lo que es el agua, sin embargo, Aguascalientes se encuentra en un estado de ESTRES HIDRICO lo que se define como una gran demanda.
+
+Nuestro producto ayuda a tener un monitoreo en todo momento sobre las tuberías del agua verificando que desde las plantas tratadoras del agua llegue con la mejor calidad a su destino como son los hogares, empresas, etc. Tenemos un dato preocupante, el 40% de esta agua que viaja a través de las tuberías, se pierde por causa de las fugas, solucionaremos este problema gracias al monitoreo para evitar cualquier fuente de perturbación en el agua.
+
+Ocupamos una inteligencia artificial (lógica difusa) como gran aliada para que al momento de analizar los valores del agua nos ayude con una toma de decisiones sobre qué tipo de mantenimiento podemos aplicar al agua, también este proyecto como la inteligencia artificial se seguirá entrenando con más valores para hacer más precisa la respuesta que nos da.
+
 
 To learn more before you start working with `amigurumis`, see the following documentation available online:
 
