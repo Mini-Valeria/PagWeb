@@ -53,7 +53,7 @@ export const Home = () => {
                             <li>   </li>
 									<li><a href="/">Inicio</a></li>
 									<li><a href="/Pag">Funcionamiento</a></li>
-									<li><a href="/privacidad">Privacidad</a></li>
+									<li><a href="/Datos">Datos</a></li>
 									<li><AuthButton></AuthButton></li>
 								</ul>
                        </div>
@@ -66,6 +66,9 @@ export const Home = () => {
 					
 					<section class="container top-categories">
 						<h1 class="heading-1">SOPORTE</h1>
+						<p> CONTACTO : 449-655-233</p>
+						<p> Email : NodAgua@gmail.com</p>
+						<p> Ubicacion: Aguascalientes,ags cP#20332</p>
 						<div class="container-categories">
 							</div>
 							</section>

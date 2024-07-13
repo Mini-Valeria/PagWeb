@@ -2,12 +2,17 @@ import { Client, InternetIdentity } from '@bundly/ic-core-js';
 import { IcpConnectContextProvider } from '@bundly/ic-react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from './Home';
+import TablaDatos from './Datos';
 
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Home/>,
+    },
+    {
+      path: "/Datos",
+      element: <TablaDatos/>,
     }
   ]);
 
