@@ -11,7 +11,7 @@ Nuestro producto ayuda a tener un monitoreo en todo momento sobre las tuberías 
 Ocupamos una inteligencia artificial (lógica difusa) como gran aliada para que al momento de analizar los valores del agua nos ayude con una toma de decisiones sobre qué tipo de mantenimiento podemos aplicar al agua, también este proyecto como la inteligencia artificial se seguirá entrenando con más valores para hacer más precisa la respuesta que nos da.
 
 
-To learn more before you start working with `amigurumis`, see the following documentation available online:
+To learn more before you start working with `NODAGUA`, see the following documentation available online:
 
 - [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
 - [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
